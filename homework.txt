@@ -1,0 +1,86 @@
+void setup(){
+  size(500,300);
+}
+
+float posx;
+float posy;
+float size;
+float v;
+
+float enemy_v;
+float enemyy;
+
+void draw(){
+  background(255);
+  
+  if(posx + v < 100 + size && posx + v + size >100 &&
+     posy     < posy + 100 * sin(enemy_v/10)+ size && 
+     posy + size > posy + 100 * sin(enemy_v/10)    ||
+     
+     posx + v < 140 + size && posx + v + size >140 &&
+     posy     < posy + 100 * sin(enemy_v/8)+ size && 
+     posy + size > posy + 100 * sin(enemy_v/8)    ||
+     
+     posx + v < 180 + size && posx + v + size >180 &&
+     posy     < posy + 100 * sin(enemy_v/7)+ size && 
+     posy + size > posy + 100 * sin(enemy_v/7)    ||
+     
+     posx + v < 220 + size && posx + v + size >220 &&
+     posy     < posy + 100 * sin(enemy_v/11)+ size && 
+     posy + size > posy + 100 * sin(enemy_v/11)    ||
+     
+     posx + v < 260 + size && posx + v + size >260 &&
+     posy     < posy + 100 * sin(enemy_v/6)+ size && 
+     posy + size > posy + 100 * sin(enemy_v/6)    ||
+     
+     posx + v < 300 + size && posx + v + size >300 &&
+     posy     < posy + 100 * sin(enemy_v/2)+ size && 
+     posy + size > posy + 100 * sin(enemy_v/2)    ||
+     
+     posx + v < 340 + size && posx + v + size >340 &&
+     posy     < posy + 100 * sin(enemy_v/4)+ size && 
+     posy + size > posy + 100 * sin(enemy_v/4)    ||
+     
+      posx + v < 380 + size && posx + v + size >380 &&
+     posy     < posy + 100 * sin(enemy_v/1)+ size && 
+     posy + size > posy + 100 * sin(enemy_v/1)    
+     )
+  {
+     
+     v = 0;
+  }
+  
+  
+  
+  
+  
+  posx = 0;
+  posy = 150;
+  size = 10;
+  fill(100,100,100);
+  ellipse(posx + v,posy,size,size);
+    
+  enemy_v += 1;
+  ellipse(100,posy + 100 * sin(enemy_v/10),size,size);
+  ellipse(140,posy + 100 * sin(enemy_v/ 8),size,size);
+  ellipse(180,posy + 100 * sin(enemy_v/ 7),size,size);
+  ellipse(220,posy + 100 * sin(enemy_v/11),size,size);
+  ellipse(260,posy + 100 * sin(enemy_v/6),size,size);
+  ellipse(300,posy + 100 * sin(enemy_v/2),size,size);
+  ellipse(340,posy + 100 * sin(enemy_v/4),size,size);
+   ellipse(380,posy + 100 * sin(enemy_v/1),size,size);
+  
+  
+   if(mousePressed )
+  {
+    v += 5;
+  }
+  
+  if( v > 400)
+  {
+    textSize(100);
+    text("GOAL",100,100);
+   
+  }
+
+}
